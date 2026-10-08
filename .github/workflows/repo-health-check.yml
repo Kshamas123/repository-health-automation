@@ -1,0 +1,8 @@
+name: Repository Health Check
+on:
+   event: push 
+jobs:
+     job1:
+        runs-on: ubuntu-latest
+        steps:
+            - run: echo "start job"
