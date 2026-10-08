@@ -1,6 +1,5 @@
 name: Repository Health Check
-on:
-   event: push 
+on: push 
 jobs:
      job1:
         runs-on: ubuntu-latest
