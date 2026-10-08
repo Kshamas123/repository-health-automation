@@ -5,3 +5,5 @@ jobs:
         runs-on: ubuntu-latest
         steps:
             - run: echo "start job"
+            - use: actions/checkout@v4
+            - run: ls
