@@ -9,5 +9,6 @@ jobs:
             - run: echo "start job"    
             - uses: actions/checkout@v4
             - run: ls
-            - run: find . -name "README.md" >> $FILE_PRESENT
+            - if: ${{! find . -name "README.md"}}
+               exit 1
             - run: echo $FILE_PRESENT
