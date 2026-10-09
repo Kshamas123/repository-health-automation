@@ -7,6 +7,4 @@ jobs:
             - run: echo "start job"    
             - uses: actions/checkout@v4
             - run: ls
-            - uses: damoun/action-find-files@v2
-              with: 
-                 pattern: 'README.md'
+            - run: find . -name "README.md"
