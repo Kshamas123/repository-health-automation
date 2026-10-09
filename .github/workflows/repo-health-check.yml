@@ -1,5 +1,7 @@
 name: Repository Health Check
 on: push 
+env: 
+    FILE_PRESENT: NOT PRESENT
 jobs:
      job1:
         runs-on: ubuntu-latest
@@ -7,4 +9,5 @@ jobs:
             - run: echo "start job"    
             - uses: actions/checkout@v4
             - run: ls
-            - run: find . -name "README.md"
+            - run: find . -name "README.md" >> $FILE_PRESENT
+            - run: echo $FILE_PRESENT
