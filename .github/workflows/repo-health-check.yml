@@ -4,6 +4,9 @@ jobs:
      job1:
         runs-on: ubuntu-latest
         steps:
-            - run: echo "start job"
+            - run: echo "start job"    
             - uses: actions/checkout@v4
             - run: ls
+            - uses: damoun/action-find-files@v2
+              with: 
+                 pattern: 'README.md'
