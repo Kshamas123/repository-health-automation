@@ -11,7 +11,7 @@ jobs:
             - run: ls
             - run: |
                  FILE_CHECK=$(find . -type f -name "README.md")
-                 if [ -n $FILE_CHECK]; then
+                 if [ -n "$FILE_CHECK" ]; then
                   echo "README.md is present. SUCCESS"
                  else
                   echo "README.md is missing. FAILURE"
