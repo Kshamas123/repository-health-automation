@@ -9,7 +9,7 @@ jobs:
             - run: echo "start job"    
             - uses: actions/checkout@v4
             - run: ls
-            - |
-              FILE_CHECK= $(find . -type f -name "*.txt")
-              run: echo $FILE_CHECK
+            - run: |
+                 FILE_CHECK=$(find . -type f -name "*.txt")
+                 echo $FILE_CHECK
             
