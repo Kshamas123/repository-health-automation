@@ -1,7 +1,7 @@
 name: Repository Health Check
 on: push 
-env: 
-    FILE_PRESENT: NOT PRESENT
+# env: 
+#     FILE_PRESENT: NOT PRESENT
 jobs:
      job1:
         runs-on: ubuntu-latest
@@ -9,7 +9,4 @@ jobs:
             - run: echo "start job"    
             - uses: actions/checkout@v4
             - run: ls
-            - run:
-               if: ${{! find . -name "README.md"}}
-                 exit 1
-            - run: echo "file is present"
+            - run: find . -name "README.md"
