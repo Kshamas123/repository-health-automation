@@ -11,7 +11,7 @@ jobs:
             - run: ls
             - env:
                  FILE_CHECK: find . -maxdepth 1 -name "README.md"
-              if: ${{ enV.FILE_CHECK == ""}}
+              if: ${{ ! env.FILE_CHECK }}
                   exit 1
               run: echo "File is present. SUCCESS"
             
