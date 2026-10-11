@@ -12,7 +12,6 @@ jobs:
             - env:
                  FILE_CHECK: $(find . -type f -name "*.txt")
               if: ${{ ! env.FILE_CHECK }}
-                  exit 1
-              else: 
-                  echo "File is present. SUCCESS"
+                  exit 1 
+            - run: echo "File is present. SUCCESS"
             
