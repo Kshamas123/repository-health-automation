@@ -9,4 +9,9 @@ jobs:
             - run: echo "start job"    
             - uses: actions/checkout@v4
             - run: ls
-            - run: find . -maxdepth 1 -name "README.md"
+            - env:
+                 FILE_CHECK: find . -maxdepth 1 -name "README.md"
+              if: ${{ enV.FILE_CHECK == ""}}
+                  exit 1
+              run: echo "File is present. SUCCESS"
+            
