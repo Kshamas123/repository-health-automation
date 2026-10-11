@@ -8,11 +8,12 @@ jobs:
             - uses: actions/checkout@v4
             - run: ls
             - run: |
-                 FILE_CHECK=$(find . -type f -name "README.md")
+                 FILE_CHECK=$(find . -maxdepth 1 -type f -name "README.md")
                  if [ -n  "$FILE_CHECK" ]; then
                   echo "README.md is present. SUCCESS"
                  else
                   echo "README.md is missing. FAILURE"
                   exit 1
                  fi
+            - run: echo ${{github.ref_name}}
             
