@@ -10,8 +10,9 @@ jobs:
             - uses: actions/checkout@v4
             - run: ls
             - env:
-                 FILE_CHECK: find . -maxdepth 1 -name "README.md"
+                 FILE_CHECK: $(find . -type f -name "*.txt")
               if: ${{ ! env.FILE_CHECK }}
                   exit 1
-              run: echo "File is present. SUCCESS"
+              else: 
+                  echo "File is present. SUCCESS"
             
